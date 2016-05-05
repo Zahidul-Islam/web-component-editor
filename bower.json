@@ -1,0 +1,30 @@
+{
+  "name": "web-component-editor",
+  "description": "Polymer Web Component Editor",
+  "main": "app.js",
+  "authors": [
+    "Zahidul Islam"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "web",
+    "component",
+    "editor",
+    "DSL"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "ace-builds": "^1.2.3",
+    "iron-grid": "*",
+    "paper-card": "PolymerElements/paper-card#^1.1.1"
+  }
+}
