@@ -1,0 +1,50 @@
+
+<dom-module id="r-nps">
+  <style>
+      :host {
+        display: block;
+        margin: 16px;
+      }
+      #gauge {
+        height: 228px;
+        width: 398px;
+      }
+  </style>
+  <template>
+    <div class="s12 m6">
+       <paper-card heading="{{title}}">
+          <div class="card-content">
+            <div id="gauge" class="s6">
+              <p>
+              <h3>Source ID   : {{source}}</h3> <br/>
+              <h3>Question ID : {{question}}</h3>
+              </p>
+            </div>
+          </div>
+        </paper-card>
+      </div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'r-nps',
+
+    properties: {
+      title: {
+          type: String,
+          value: "NPS Title"
+        },
+      source: String,
+      question: String
+    },
+    
+    ready: function() {
+    }
+
+  });
+
+</script>

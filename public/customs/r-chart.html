@@ -1,0 +1,55 @@
+
+<dom-module id="r-chart">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 16px;
+      }
+    </style>
+    <div class="s12 m6">
+       <paper-card heading="{{title}}">
+          <div class="card-content">
+            <google-chart
+              type='{{type}}'
+              options='{"title": "Inventory", "page": "enable", "pageSize": 4}'
+              data='[["Year", "Things", "Stuff"],
+                     ["2004", 1000, 400],
+                     ["2005", 1170, 460],
+                     ["2006", 660, 1120],
+                     ["2007", 1030, 540],
+                     ["2008", 1000, 400],
+                     ["2009", 1170, 460],
+                     ["2010", 660, 1120],
+                     ["2011", 1030, 540]]'>
+            </google-chart>
+          </div>
+        </paper-card>
+      </div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'r-chart',
+
+    properties: {
+      title: {
+          type: String,
+          value: "Chart Title"
+        },
+      type: {
+        type: String,
+      }
+    },
+    
+    ready: function() {
+    }
+
+  });
+
+</script>

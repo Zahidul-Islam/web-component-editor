@@ -1,0 +1,37 @@
+
+<dom-module id="r-table">
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 16px;
+      }
+    </style>
+    <div class="s12 m6">
+     <paper-card heading="{{title}}">
+        <div class="card-content">Table</div>
+      </paper-card>
+    </div>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'r-table',
+
+    properties: {
+      title: {
+          type: String,
+          value: "Table Title"
+        }
+    },
+    
+    ready: function() {
+    }
+
+  });
+
+</script>
