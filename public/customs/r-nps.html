@@ -1,25 +1,25 @@
-
 <dom-module id="r-nps">
   <style>
       :host {
         display: block;
         margin: 16px;
       }
-      #gauge {
-        height: 228px;
-        width: 398px;
-      }
+     #gauge {
+        min-width: 400px;
+        min-height: 270px;
+     }
   </style>
   <template>
-    <div class="s12 m6">
+    <div>
        <paper-card heading="{{title}}">
           <div class="card-content">
-            <div id="gauge" class="s6">
+            <div id="gauge">
               <p>
-              <h3>Source ID   : {{source}}</h3> <br/>
-              <h3>Question ID : {{question}}</h3>
+                  Source: {{source}}    Question: {{question}}
               </p>
+              <content></content>
             </div>
+
           </div>
         </paper-card>
       </div>

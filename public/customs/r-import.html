@@ -1,0 +1,40 @@
+<dom-module id="r-import">
+  <style>
+      :host {
+        display: block;
+       
+      }
+     
+    </style>
+  <template>
+    <div class="s12" id="includedContent">
+     
+    </div>
+  </template>
+
+</dom-module>
+
+<script>
+ 
+  
+  Polymer({
+
+    is: 'r-import',
+
+    properties: {
+      src: String
+    },
+    
+    ready: function() {
+       
+    },
+    attached: function(){
+      console.log('attached');
+      var importPrefix = "static/imports/"; 
+      var fileSuffix   = ".html";
+
+      $("#includedContent").load(importPrefix + this.src + fileSuffix);
+    }
+  });
+
+</script>

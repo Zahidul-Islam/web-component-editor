@@ -1,22 +1,45 @@
 
 <dom-module id="r-table">
-  <template>
-    <style>
+  <style>
       :host {
         display: block;
-        margin: 16px;
+        margin: 16px;        
       }
-    </style>
-    <div class="s12 m6">
-     <paper-card heading="{{title}}">
-        <div class="card-content">Table</div>
-      </paper-card>
-    </div>
+      paper-card {
+            --paper-card-header-text: {
+              font-family: 'Roboto', 'Noto', sans-serif;
+              font-weight: normal;
+              font-size: 20px;
+            }
+          }
+      #table {
+        width: 532px;
+      }
+  </style>
+  <template id="app">
+      <div class="s6 m4">
+         <paper-card heading="{{title}}">
+          <paper-datatable data="{{data}}" selectable multi-selection id="table">
+            <paper-datatable-column header="Year" property="Year" type="String" style="width:99%;" sortable></paper-datatable-column>
+            <paper-datatable-column header="Things" property="Things" type="Number" align="right" sortable sorted></paper-datatable-column>
+            <paper-datatable-column header="Stuff" property="Stuff" type="Number" align="right" sortable></paper-datatable-column>
+          </paper-datatable>
+        </paper-card>
+      </div>
   </template>
 
 </dom-module>
 
 <script>
+
+    var data = [
+        {id: 0, Year: '2004', Things: 159, Stuff: 24},
+        {id: 1, Year: '2005', Things: 237, Stuff: 37},
+        {id: 2, Year: '2006', Things: 262, Stuff: 24},
+        {id: 3, Year: '2007', Things: 305, Stuff: 67},
+        {id: 4, Year: '2008', Things: 356, Stuff: 49},
+        {id: 5, Year: '2009', Things: 373, Stuff: 94}
+      ];
 
   Polymer({
 
@@ -25,11 +48,18 @@
     properties: {
       title: {
           type: String,
-          value: "Table Title"
-        }
+          value: "Table Title",
+          notify: true
+        },
+     data: {
+            type: Array,
+            notify: true,
+            value: data
+          },
     },
     
     ready: function() {
+    
     }
 
   });

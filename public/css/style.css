@@ -1,7 +1,8 @@
 body, html {
   height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 #editor {
-  height: 600px;
+	height: 85vh;
 }

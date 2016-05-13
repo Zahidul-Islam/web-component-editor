@@ -7,14 +7,82 @@
 </head>
 
 <body class="fullbleed layout vertical">
+	<h1 align="center">Dashboard Editor</h1>
 	<iron-grid>
 		<div class="s12">
-			<button>Toggle Editor</button>
+			
+			<div align="right">
+				<paper-icon-button icon="icons:code" title="Internal DSL" id="internalDSL"></paper-icon-button>
+				<paper-icon-button icon="icons:subject" title="External DSL" id="externalDSL"></paper-icon-button>	
+				<paper-icon-button icon="icons:perm-media" onclick="demo.toggle()"></paper-icon-button>	
+				<paper-icon-button icon="icons:help" onclick="dialog.toggle()"></paper-icon-button>	
+			</div>
+
 		</div>
+
 		<div class="s12">
-			<div id="editor" class="s6">some text</div>
-			<div id="preview" class="s6"></div>	
+			<div id="editor" class="s5"></div>
+			<div id="preview" class="s7"></div>	
 		</div>
+		<div class=s12><span align="right" id="mode"></span></div>
+		
+	
+	<paper-dialog id="dialog">
+		<div>
+			<h2>Available Widgets:</h2>
+			<ul>
+				<li>r-dashboard</li>
+				<li>r-chart</li>
+				<li>r-nps</li>
+				<li>r-import</li>
+			</ul>
+		
+		    <h2>Sample Code:</h2>
+			<xmp>
+				<r-dashboard title="Dashboard 1">
+				    <r-chart title="Widget 1"></r-chart>
+				    <r-nps title="Widget 2">
+				        <div>
+				            <h1> Custom Content</h1>
+				            <p> you can add any text here </p>
+				            <div>
+				                <button onclick="alert('You are clicking on me');">Click Me</button> 
+				            </div>
+				        </div>
+				    </r-nps>
+				    <r-chart title="Widget 3" type="pie"></r-chart>
+				    <r-chart title="Widget 4" type="bar"></r-chart>   
+				</r-dashboard>
+	  		</xmp>
+	  			
+			<pre>
+	  			r-dashboard(title="Dashboard 1")
+				    r-chart(title="Widget 1")
+				    r-nps(title="Widget 2")
+				        div
+				            h1 Custom Content
+				            p You can add any text here
+				            div
+				                button(onclick="alert('You are clicking on me');") Click Me
+				    r-chart(title="Widget 3", type="pie")
+				    r-chart(title="Widget 3", type="bar")
+	  					
+	  			<blockquote>*** Indentation is important ***</blockquote>
+	  		</pre>
+			</div>
+			<div class="buttons">
+			    <paper-button dialog-dismiss>Cancel</paper-button>	
+			</div>
+	</paper-dialog>	
+	<paper-dialog id="demo">
+		<div class="s12">
+			<img src="/static/images/dashboard.png" height="700" width="700">
+		</div>
+		<div class="buttons">
+			    <paper-button dialog-dismiss>Cancel</paper-button>			
+		</div>
+	</paper-dialog>
+
 	</iron-grid>
 </body>
 </html>

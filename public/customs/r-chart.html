@@ -1,19 +1,20 @@
-
 <dom-module id="r-chart">
-
   <template>
     <style>
       :host {
         display: block;
         margin: 16px;
       }
+      google-chart {
+          min-width: 200px;
+      }     
     </style>
-    <div class="s12 m6">
+    <div id="chart" >
        <paper-card heading="{{title}}">
           <div class="card-content">
             <google-chart
               type='{{type}}'
-              options='{"title": "Inventory", "page": "enable", "pageSize": 4}'
+              options='{"title": "Inventory", "page": "enable", "pageSize": 4, "width": "100%", "height": "100%"}'
               data='[["Year", "Things", "Stuff"],
                      ["2004", 1000, 400],
                      ["2005", 1170, 460],
@@ -45,11 +46,7 @@
       type: {
         type: String,
       }
-    },
-    
-    ready: function() {
     }
-
   });
 
 </script>
